@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>input输入元素</title>
+</head>
+
+<body>
+  <form>
+      用户名：<input type="text" name="username" autocomplete="on"><br/>
+      密码：<input type="text"name = "password" autocomplete="off"><br/>
+      <input type="submit" value = "登陆"><br/>
+    </form>
+    <form>
+        <p><lable for = "textareal">请仔细阅读用户许可协议:</lable></p><br/>
+        <p>
+            <textarea name="textareal" id="textareal"cols="45" rows = "5">许可协议许可协议</textarea>
+            <br/>
+        </p>
+        <p>
+            <input type="submit" value="同意" autofocus = "on">
+            <input type="submit" value="拒绝">
+        </p>
+    </form>
+    <form id = "form1">
+        请输入姓名：<input type="text" name="name1" autofocus = "on"/>
+        <input type = "submit" value = "提交"/>
+    </form>
+    <p>下面的输入框在form元素之外，但是因为指定的form属性，并且值为表单的id所以输入仍然是表单的一部分<br/>
+        请输入地址：<input type="text" name="address" form ="form1"/>
+    </p>
+</body>
+</html>

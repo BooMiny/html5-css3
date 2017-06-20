@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>CSS常用文本属性</title>
+        <style type="text/css">
+            p{
+                font: bold 60px sans-serif;
+                color:#000;
+                text-shadow: 2px 2px 10px #ff0000; 
+            }
+            
+            div.text{
+                width: 12em;
+                border:1px solid #000000;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+            
+            h3.test{
+                width: 11em;
+                border: 1px solid #000000;
+                word-wrap: break-word;/*nomal*/
+            }
+        </style>
+    </head>
+    <body>
+        <p>海同科技-HTML5+CSS3</p>
+        
+        <h2>text-overflow:ellipsis</h2>
+        
+        <div class="text" style="text-overflow:ellipsis">这是一段长文本，无法完整地在容器中显示。</div>
+        <br/>
+        
+        <h2>text-overflow:clip</h2>
+        <div class="text"style="text-overflow:clip">这是一段长文本，无法在容器中完整显示。</div>
+        
+        <h2>word-wrap:normal/break-word</h2>
+        
+        <h3 class="test">this paragraph contains a very long word:this is very long long long longlonglonglongbreakandwraptonextline.longlonglonglongbreakand wrap to next line</h3>
+    </body>
+</html>

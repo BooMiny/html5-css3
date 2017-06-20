@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>2D变换</title>
+        <style type="text/css">
+            *{
+                padding: 0px;
+                margin: 0px;
+            }
+            .menu ul{
+                border-top: 15px solid black;
+                padding: 0 10px;
+                list-style-type: none;
+            }
+            .menu ul li a{
+                color: #fff;
+                float:left;
+                margin: 0 5px;
+                font-size: 14px;
+                height: 50px;
+                line-height: 50px;
+                text-align: 50px;
+                width: 65px;
+                padding: 10px 5px;
+                background: #151515;
+                border-radius: 0 0 5px 5px;
+                box-shadow: 0 0 1px #ccc,inset 0 0 2px #fff;
+                text-shadow: 0 1px 1px #686868;
+                text-decoration: none;
+            }
+            .menu ul li.rotate a{
+                background: red;
+            }
+            .menu ul li.translate a{
+                background: #2EC7D2;
+            }
+            .menu ul li.translate-x a{
+                background: #8FDD21;
+            }
+            .menu ul li.translate-y a{
+                background: #D50E19;
+            }
+            .menu ul li.scale a{
+                background: #cdddf2;
+            }
+            .menu ul li.scale-x a{
+                background: #0fDD21;
+            }
+            .menu ul li.scale-y a{
+                background: #cd5917;
+            }
+            .menu ul li.skew a{
+                background: #519;
+            }
+            .menu ul li.skew-x a{
+                background: #D50;
+            }
+            .menu ul li.skew-y a{
+                background: #E19;
+            }
+            .menu ul li.mutil a{
+                background: #990e10;
+            }
+            .menu ul li.origin a{
+                background: #2e9967;
+            }
+            
+            .menu ul li.rotate a:hover{
+                transform: rotate(25deg) scale(1.2,1.2);
+            }
+            .menu ul li.scale a:hover{
+                transform:scale(0.8,0.8);
+            }
+             .menu ul li.scale-x a:hover{
+                transform:scaleX(0.5);
+            }
+             .menu ul li.scale-y a:hover{
+                transform:scaleY(1.2);
+            }
+             .menu ul li.translate a:hover{
+                transform:translate(-10px,-10px);
+            }
+             .menu ul li.translate-x a:hover{
+                transform:translateX(10px);
+            }
+             .menu ul li.translate-y a:hover{
+                transform:translateY(10px);
+            }
+             .menu ul li.translate a:hover{
+                transform:translate(-10px,-10px);
+            }
+             .menu ul li.skew a:hover{
+                transform:skew(45deg,15deg);
+            }
+             .menu ul li.skew-x a:hover{
+                transform:skewX(-30deg);
+            }
+             .menu ul li.skew-y a:hover{
+                transform:skewY(30deg);
+            }
+            .menu ul li.rotate a:hover{
+                transform: rotate(25deg) scale(1.2,1.2);
+            }
+             .menu ul li.origin a:hover{
+                transform-origin: left top;
+            }
+            .menu ul li.origin a:hover{
+                transform: rotate(25deg) scale(1.2,1.2);
+            }
+            
+            .menu ul li.mutil a:hover{
+                transform: rotate(25deg) scale(1.2,1.2);
+            }
+        </style>
+    </head>
+    
+    <body class="menu">
+        <ul class="clearfix">
+            <li class="item rotate"><a href="#">Rotate</a></li>
+            <li class="item scale"><a href="#">Scale</a></li>
+            <li class="item scale-x"><a href="#">Scale-x</a></li>
+            <li class="item scale-y"><a href="#">Scale-y</a></li>
+            <li class="item translate"><a href="#">Translate</a></li>
+            <li class="item translate-x"><a href="#">Translate-x</a></li>
+            <li class="item translate-y"><a href="#">Translate-y</a></li>
+            <li class="item skew"><a href="#">skew</a></li>
+            <li class="item skew-x"><a href="#">skew-x</a></li>
+            <li class="item skew-y"><a href="#">skew-y</a></li> 
+            <li class="item mutil"><a href="#">mutil</a></li>
+            <li class="item origin"><a href="#">origin</a></li>
+        </ul>
+    </body>
+</html>

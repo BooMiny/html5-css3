@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>UI伪类选择器</title>
+        <style type="text/css">
+      /*      input[type = "text"]:enabled{
+                background-color: burlywood;
+            }
+            */
+       /*     input[type = "text"]:disabled{
+                background-color: burlywood;
+            }  */
+            
+          /*  input:checked{
+                background-color: burlywood;
+            }*/
+            
+              
+        /*    input:read-write{
+                background-color: burlywood;
+            }*/
+            
+       /*      input:read-only{
+                background-color: burlywood;
+            }*/
+            
+         /*   ::selection{
+                color: red;
+            } */
+            
+        /*    ::-moz-selection{
+                color: blue;
+            } */
+            
+        /*    div::selection{
+                color: aqua;
+            }  */
+            
+       /*     input:out-of-range{
+                
+                border: 2px solid red;
+            }
+            
+            input:in-range{
+                border: 2px solid yellow;
+            }
+            */
+    /*         p>input[type = 'text']:optional{
+                background-color: red;
+            }
+            p>input[type = 'text']:required{
+                background-color: blue;
+            }  */
+            
+            input[type="email"]:valid
+            {
+                background-color: blue;
+            }
+            input[type="email"]:invalid
+            {
+                background-color: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="#" name="myform" method="get">  <!--action 提交表单时向何处发送数据-->
+            姓名：<input type="text" value="猴哥"><br/>
+            国家：<input type="text" disabled="disable" value="中国"><br/>
+            <input type="radio" checked = "checked" value="male" name="gender">男<br/> <!--radio用于互斥单选按钮-->
+            <input type="radio" value = "famale" name="gender">女<br/><!--checked 用于预定选中 */-->
+            
+            <p>普通的input元素：<br/><input value = "hello"></p>
+            <p>只读的input元素：<br/><input readonly value="hello"></p>
+            
+            <div>这是div元素中的一些文本.</div>
+            
+            <input type="number" min="5" max="10" value="6">
+            
+            <p>可选的input元素:<br/><input type="text"></p>
+            
+             <p>必填的input元素:<br/><input required type="text"></p>
+            <input type="email" value="support@example.com">
+        </form>
+    </body>
+</html>

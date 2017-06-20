@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>css动画-1</title>
+        <style type="text/css">
+            body{
+                background-color: #f0f3f9;
+            }
+            .trans_box{
+                padding: 20px;
+            }
+            .trans_list{
+                width: 5%;
+                height: 64px;
+                margin:10px 0;
+                background-color: #486AAA;
+                color: #fff;
+                text-align: center;
+            }
+            div.test{
+                width: 100px;
+                height: 100px;
+                background: red;
+                transition-property: width;/* all none ... */
+                transition-duration: 1.5s;
+            }
+            div.test:hover{
+                width: 300px;
+            }
+            
+            .trans_box:hover .trans_list{
+                margin-left: 89%;
+                background-color: #0000ff;
+                color:#000;
+                border-radius: 25px;
+                transform: rotate(360deg);
+            }
+            .ease{
+                transition: all 3s ease;
+            }
+            .ease_in{
+                transition: all 3s ease-in;
+            }
+             .ease_out{
+                transition: all 3s ease-out;
+            }
+             .ease_in_out{
+                transition: all 3s ease-in-out;
+            }
+             .liner{
+                transition: all 3s linear;
+            }
+            .cubic_bezier{
+                transition: all 4s cubic-bezier(0,0,1,1);
+            }
+        </style>
+    </head>
+    <body>;
+        <h3>transitions动画</h3>
+        <div class="test"></div>
+        <div id="transBox" class="trans_box">
+            <div class="trans_list ease">ease</div>
+            <div class="trans_list ease_in">ease-in</div>
+            <div class="trans_list ease_out">ease-out</div>
+            <div class="trans_list ease_in_out">ease-in-out</div>
+            <div class="trans_list liner">liner</div>
+            <div class="trans_list cubic_bezier">cubic-bezier</div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>渐变</title>
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+        }
+        #mycanvas{
+            border: 1px solid #9c9898;
+            background: #77ffcc
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload=function(){
+            var canvas = document.getElementById("mycanvas");
+            var context = canvas.getContext("2d");
+            //线性渐变
+            var clg = context.createLinearGradient(0,0,200,200);
+            clg.addColorStop(0,"#ff0000");
+            clg.addColorStop(0.5,"#00ff00");
+            clg.addColorStop(1,"#0000ff");
+            context.fillStyle = clg;
+            context.strokeStyle = clg;
+            context.fillRect(10,10,200,200);
+            
+            //径向渐变
+            var crg = context.createRadialGradient(325,100,20,325,100,80);
+            crg.addColorStop(0,"#ffffff");
+            crg.addColorStop(0.75,"#ff0000");
+            crg.addColorStop(1,"#000000");
+            context.fillStyle = crg;
+            context.fillRect(230,10,200,200);
+        }
+    </script>
+</head>
+
+<body>
+  <canvas id="mycanvas" width="578" height="200">
+      不支持canvas元素，请更新浏览器
+    </canvas>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>绘制文本</title>
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+        }
+        #mycanvas{
+            border: 1px solid #9c9898;
+            background: #77ffcc
+        }
+    </style>
+    <script type="text/javascript">
+        function wrapText(context,text,x,y,maxWidth,lineHeight){
+            var words = text.split(" ");
+            var line = "";
+            for(var n = 0;n<words.length;n++){
+                var textLine = line+words[n]+" ";
+                var metrics = context.measureText(textLine);
+                var textWidth = metrics.width;
+                if(textWidth>maxWidth){
+                    context.fillText(line,x,y);
+                    line = words[n]+" ";
+                    y+=lineHeight;
+                }else{
+                    line = textLine;
+                }
+            }
+            context.fillText(line,x,y);
+        }
+        
+        
+        
+        window.onload=function(){
+            var canvas = document.getElementById("mycanvas");
+            var context = canvas.getContext("2d");
+            var text = "all the world's a stage,and all the men and women"
+            +" merely players. they have their exits and their entrances;and one man in"
+            +" his time players many parts.";
+            var maxWidth = 400;
+            var lineHeight = 25;
+            var x = (canvas.width-maxWidth)/2;
+            var y = 60;
+            
+            context.font = "16px Arial";
+            context.fillStyle = "#333";
+            wrapText(context,text,x,y,maxWidth,lineHeight);
+            
+        };
+    </script>
+</head>
+
+<body>
+  <canvas id="mycanvas" width="578" height="700">
+      不支持canvas元素，请更新浏览器
+    </canvas>
+</body>
+</html>

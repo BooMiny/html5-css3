@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>连接样式</title>
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+        }
+        #mycanvas{
+            border: 1px solid #9c9898;
+            background: #77ffcc
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload=function(){
+            var canvas = document.getElementById("mycanvas");
+            var context = canvas.getContext("2d");
+           
+            //绘制矩形
+            context.beginPath();
+            context.rect(10,50,200,100);
+            context.lineWidth = 5;
+            context.lineWidth = 5;
+            context.strokeStyle = "black";
+            context.stroke();
+            context.fillStyle = "#00ff00";
+             //设置阴影
+            context.shadowColor = "black";
+            context.shadowBlur = 20;
+            context.shadowOffsetX = 10;
+            context.shadowOffsetY = 10;
+            
+            context.fill();
+           
+            
+            context.beginPath();
+            var centerX = canvas.width/1.5;
+            var centerY = canvas.height/2;
+            var radius = 80;
+            context.arc(centerX,centerY,radius,0,2*Math.PI,false);
+             context.lineWidth = 5;
+            context.strokeStyle = "black";
+            context.stroke();
+            context.fillStyle = "#8ed6FF"//设置填充色
+             //设置阴影
+            context.shadowColor = "green";
+            context.shadowBlur = 20;
+            context.shadowOffsetX = 10;
+            context.shadowOffsetY = 10;
+            context.globalAlpha = 0.2;
+            context.fill();
+            
+        }
+    </script>
+</head>
+
+<body>
+  <canvas id="mycanvas" width="578" height="200">
+      不支持canvas元素，请更新浏览器
+    </canvas>
+</body>
+</html>

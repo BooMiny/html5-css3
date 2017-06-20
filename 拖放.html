@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style type="text/css">
+    #div1,#div2{
+        float: left;
+        width: 250px;
+        height: 230px;
+        border: 1px solid #aaaaaa;
+        padding: 45px;
+        margin: 20px;
+    }
+</style>
+<script type="text/javascript">
+    function allowDrop(ev)
+    {
+        ev.preventDefault();//避免浏览器对事件默认处理
+    }
+    function drag(ev){
+        ev.dataTransfer.setData("Image",ev.target.id);//设置被拖放的数据类型和值
+    }
+    function drop(ev)
+    {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("Image");  //获取拖放数据
+        ev.target.appendChild(document.getElementById(data));
+    }
+</script>
+</head>
+<body>
+
+<p>请把的图片拖放到矩形中：</p>
+
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <img id="drag1" src="dog.jpg" draggable="true" ondragstart="drag(event)" />
+    </div>
+<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+</body>
+</html>

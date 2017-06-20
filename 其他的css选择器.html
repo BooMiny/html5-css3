@@ -1,0 +1,44 @@
+<!doctype html>
+<html manifest="">
+    <head>
+        <meta charset="utf-8">
+        <title>其他的css选择器</title>
+        
+        <style type="text/css">
+            /*匹配所有位于div后面的 p元素*/
+     /*       div ~ p {
+                background-color: yellow;
+            }  */
+     
+    /*  p标签中id不是red的元素
+         p:not(.red){
+                background-color: yellow;
+            }  */
+            
+            :target{
+                border: 2px solid #D4D4D4;
+                background-color: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <p>0</p>
+        
+        <div>
+            <p>1</p>
+        </div>
+        <div>
+            <p class="red">2</p>
+        </div>
+        
+        <p>3</p>
+        
+        <p><a href="#news1">跳转内容一</a></p>
+        <p><a href="#news2">跳转内容二</a></p>
+        
+        <p>点击以上链接,:target 选择器会高亮显示你所跳转的当前活动的错标记</p>
+        
+        <p id="news1"><b>新的内容1</b></p>
+        <p id="news2"><b>新的内容2</b></p>
+    </body>
+</html>

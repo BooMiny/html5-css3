@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>绘制图像</title>
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+        }
+        #mycanvas{
+            border: 1px solid #9c9898;
+            background: #77ffcc
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload=function(){
+            var canvas = document.getElementById("mycanvas");
+            var context = canvas.getContext("2d");
+            var imageObj = new Image();
+            imageObj.src = "dog.jpg";
+            imageObj.onload = function(){
+                context.drawImage(imageObj,10,10);
+                //context.drawImage(imageObj,10,10,200,300);
+                context.drawImage(imageObj,50,40,200,250,35,35,200,200);
+            }
+            
+           
+        }
+    </script>
+</head>
+
+<body>
+  <canvas id="mycanvas" width="578" height="700">
+      不支持canvas元素，请更新浏览器
+    </canvas>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html manifest="">
+    <head>
+        <meta charset="utf-8">
+        <title>border-image</title>
+        <style type="text/css">
+            div{
+                border: 15px solid transparent;
+                width: 250px;
+                padding: 10px 20px;
+            }
+            
+            #round{
+              /*  -moz-border-image:url("border.png");//火狐 -o- opera webkit  */
+                border-image: url("border.png")30 round;
+            }
+            
+            #stretch{
+                border-image: url("border.png")30 stretch;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>border-radius</h3>
+        
+        <div id = "round">通过使用round来填充容器</div>
+        <br/>
+        
+        <div id="stretch">使用streched来填充容器</div>
+    </body>
+</html>

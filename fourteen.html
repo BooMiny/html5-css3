@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>图像使用</title>
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+        }
+        #mycanvas{
+            border: 1px solid #9c9898;
+            background: #77ffcc
+        }
+    </style>
+    <script type="text/javascript">
+       function draw(type){
+        var canvas = document.getElementById("mycanvas");
+        var ctx = canvas.getContext("2d");
+        
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        var img = document.getElementById("butt");
+        var pat = ctx.createPattern(img,type);
+        ctx.rect(0,0,500,200);
+        ctx.fillStyle = pat;
+        ctx.fill();
+       }
+    </script>
+</head>
+
+<body>
+    <p>图像的使用</p>
+    <img src="12.jpg" id = "butt"/><br/>
+    <button onclick="draw('repeat')">Repeat</button>
+    <button onclick="draw('repeat-x')">Repeat-x</button>
+    <button onclick="draw('repeat-y')">Repeat-y</button>
+    <button onclick="draw('no-repeat')">No-repeate</button>
+    <br/>
+  <canvas id="mycanvas" width="578" height="200">
+      不支持canvas元素，请更新浏览器
+    </canvas>
+</body>
+</html>

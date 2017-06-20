@@ -1,0 +1,31 @@
+<!doctype html>
+<html manifest="">
+    <head>
+        <meta charset="utf-8">
+        <title>background-clip</title>
+        <style type="text/css">
+            .border{
+                width: 150px;
+                height: 150px;
+                padding: 30px;
+                margin: 0 auto;
+                background: url("bg_flower.gif") black;
+                background-repeat: no-repeat;
+                background-position: left top;
+                border: 30px dashed rgba(255,0,0,0.5);
+
+                background-origin: border-box;
+                
+              /*  background-clip: content-box;   */
+             /*   background-clip: padding-box;   */
+                background-clip: border-box；
+                
+                
+            }
+        </style>
+    </head>
+    <body>
+       <h3>background-clip的使用</h3>
+        <div class="border"></div>
+    </body>
+</html>

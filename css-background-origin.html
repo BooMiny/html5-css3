@@ -1,0 +1,32 @@
+<!doctype html>
+<html manifest="">
+    <head>
+        <meta charset="utf-8">
+        <title>background-origin</title>
+        <style type="text/css">
+            .border{
+                width: 150px;
+                height: 150px;
+                padding: 30px;
+                margin: 0 auto;
+                background: url("bg_flower.gif");
+                background-repeat: no-repeat;
+                background-position: left top;
+                border: 30px dashed rgba(255,0,0,0.5);
+                
+              /*   background-origin: content-box;
+                
+                -moz- background-origin: content-box;
+                -o- background-origin: content-box;
+                -weikit- background-origin: content-box;
+                
+                */
+                background-origin: border-box;
+            }
+        </style>
+    </head>
+    <body>
+       <h3>background-origin的使用</h3>
+        <div class="border"></div>
+    </body>
+</html>

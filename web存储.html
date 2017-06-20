@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>web存储</title>
+        /* localstorage永久存储，sessionstorage暂时存储*/
+        <style>
+            textarea{
+                width: 500px;
+                height: 200px;
+            }
+        </style>
+        <script type="text/javascript">
+            //使用HTML web存储的sessionStorage方式进行编写一个web界面
+            //功能是一个简易的web留言板。留言板可以永久保存，并且可以清除留言内容
+            
+            function addInfo(){
+                var info=document.getElementById("t1");
+                var LStorage=window.localStorage;
+                if(LStorage.myBoard){
+                    var date = new Date();
+                    //获取原先建所对应值，再加上留言信息
+                    LStorage.myBoard+=t1.value+"\n发表时间："+date.toLocaleString()+"\n";
+                }
+                else{
+                    var date = new Date();
+                    LStorage.myBoard = t1.value + "\n发表时间："+date.toLocaleString()+"\n";
+                }
+                upInfo();
+            }
+            
+            //去除键所对应的值，显示在多行文本框中
+            function upInfo(){
+                var LStorage = window.localStorage;
+                var show = document.getElementById("show");
+                if(window.localStorage.myBoard){
+                    show.value=window.localStorage.getItem("myBoard");
+                }
+                else{
+                    show.value = "还没有留言";
+                }
+            }
+            
+            function cleanInfo(){
+                window.localStorage.removeItem("myBoard");
+                upInfo();
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            <h2>简单的web存储留言板</h2>
+            <textarea id="t1"></textarea>
+            <br/>
+            <input type="button" class="button" onclick="addInfo()" value="留言">
+            <input type="button" class="button" onclick="cleanInfo()" value="清除留言">
+            <br/>
+            <hr/>
+            <textarea id="show" readonly="readonly"></textarea>
+        </div>
+    </body>
+</html>

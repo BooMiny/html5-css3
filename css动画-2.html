@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>animation动画</title>
+        <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $(".btn-paused").click(function(){
+                    $("#js_wrap").addClass("paused");
+                })
+            })
+        </script>
+        <style type="text/css">
+            .container{
+                position: relative;
+                width: 66px;
+                height:105px;
+                margin-left: 200px;
+                margin-bottom: 50px;
+                background-color: #ffe7f8;
+            }
+            .wrap{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: url("bp.jpg") 0 0 no-repeat;
+                animation-name: running_girl;
+                animation-duration: 950ms;
+                animation-iteration-count: infinite;
+                animation-timing-function: step-end;
+                
+            }
+            a[class^=run_], .btn-paused{
+                display: block;
+                color: #000;
+                text-align: center;
+                padding: 5px;
+                margin-bottom: 5px;
+                margin-left: 50px;
+                text-decoration: none;
+                width: 50px;
+                border: 1px solid #ccc;
+                float: left;
+            }
+            
+            @keyframes running_girl{
+                0%{
+                    background-position: 0,0;
+                }
+                14.3%{
+                    background-position: -124px,0;
+                }
+                28.6%{
+                    background-position: -186px,0;
+                }
+                42.9%{
+                    background-position: -248px,0;
+                }
+                57.2%{
+                    background-position: -310px,0;
+                }
+                71.5%{
+                    background-position: -372px,0;
+                }
+                85.8%{
+                    background-position: -438px,0;
+                }
+                100%{
+                    background-position: 0,0;
+                }
+                
+                .xfast{
+                    animation-duration: 200ms;
+                }
+                .fast{
+                    animation-duration: 500ms;
+                }
+                .normal{
+                    animation-duration: 700ms;
+                }
+                .slow{
+                    animation-duration: 1000ms;
+                }
+                .paused{
+                    animation-play-state: paused;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h3>animation动画</h3>
+        
+        <div class="container">
+            <div class="wrap" id="js_wrap"></div>
+        </div>
+        
+        <a class="run_xfast" href="###">最快</a>
+        <a class="run_fast" href="###">快</a>
+        <a class="run_normal" href="###">正常</a>
+        <a class="run_slow" href="###">慢</a>
+        <button class="btn-paused">暂停</button>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html manifest="">
+    <head>
+        <meta charset="utf-8">
+        <title>css属性选择器</title>
+        <style type="text/css">
+            p{margin: 4px}
+            a[href^="http:"]{ //以http:开头
+                background: url("%E5%9B%BE%E6%A0%87.jpg") no-repeat left center;
+                padding-left: 30px;
+            }
+            a[href$="pdf"]{ //以pdf结尾
+                background: url("%E5%9B%BE%E6%A0%87.jpg") no-repeat left center;
+                padding-left: 30px;
+            }
+             a[href$="xxx"]{//包含xxx
+                background: url("%E5%9B%BE%E6%A0%87.jpg") no-repeat left center;
+                padding-left: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <p><a href = "http://www.baidu.com/name.pdf">PDF文件</a></p>
+        <p><a href = "http://www.baidu.com/name.ppt">PPT文件</a></p>
+        <p><a href = "http://www.baidu.com/name.xls">XLS文件</a></p>
+        <p><a href = "http://www.baidu.com/xxx.rar">RAR文件</a></p>
+        <p><a href = "http://www.baidu.com/name.gif">GIF文件</a></p>
+        <p><a href = "http://www.baidu.com/xxx.jpg">JPG文件</a></p>
+        <p><a href = "http://www.baidu.com/name.pdf">PDF文件</a></p>
+        <p><a href = "http://www.baidu.com/">http://www.baidu.com/</a></p>
+    </body>
+</html>

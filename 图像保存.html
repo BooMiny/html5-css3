@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>图像保存</title>
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+        }
+        #mycanvas{
+            border: 1px solid #9c9898;
+            background: #77ffcc
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload=function(){
+            var canvas = document.getElementById("mycanvas");
+            var context = canvas.getContext("2d");
+            
+            var rectWidth = 150;
+            var rectHeight = 75;
+            context.save();//保存状态1
+            
+            
+            context.fillStyle = "#ff0000";
+            
+            //把坐标原点移动到canvas中心点
+            context.translate(canvas.width/2,canvas.height/2);
+            context.save();//保存状态2
+            
+            //顺时针旋转45度
+            context.rotate(0.25*Math.PI);
+            context.save();//保存状态3
+            
+            //坐标在纵向上缩小一半
+            context.scale(1,0.5);
+            context.fillStyle = "blue";
+            context.fillRect(-rectWidth/2,-rectHeight/2,rectWidth,rectHeight);
+            
+           context.restore();
+           context.fillStyle = "red";
+           context.fillRect(-rectWidth/2,-rectHeight/2,rectWidth,rectHeight);
+            
+         //  context.restore();
+          // context.restore();
+        }
+    </script>
+</head>
+
+<body>
+  <canvas id="mycanvas" width="578" height="200">
+      不支持canvas元素，请更新浏览器
+    </canvas>
+</body>
+</html>
